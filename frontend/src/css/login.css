@@ -1,8 +1,17 @@
-#login {
-  background: var(--surfacePrimary);
+.login-background {
+  background: url('/img/mountains.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(5px);
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#login {
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -17,7 +26,14 @@
 #login h1 {
   text-align: center;
   font-size: 2.5em;
-  margin: 0.4em 0 0.67em;
+  margin: 0.4em 0 0;
+  color: var(--textSecondary) !important;
+}
+
+#login h3 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0.1em 0 0.72em;
 }
 
 #login form {
@@ -25,7 +41,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 16em;
+  max-width: 18em;
   width: 90%;
 }
 
@@ -62,4 +78,54 @@
   font-weight: 500;
   font-size: 0.9rem;
   margin: 0.5rem 0;
+}
+
+#login .input--block {
+  margin-bottom: 0.5em;
+  display: block;
+  width: 100%;
+  height: 3em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+}
+
+#login .input--block:hover,
+#login .input--block:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
+  outline: none
+}
+
+#login .button--block {
+  margin: 0 0 0.5em;
+  display: block;
+  width: 100%;
+  border-radius: 0.5em;
+  height: 3em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#login .button {
+  outline: 0;
+  border: 0;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  background: var(--blue);
+  color: white;
+  border: 1px solid var(--divider);
+  box-shadow: 0 0 5px var(--divider);
+  transition: 0.1s ease all;
+}
+
+#login form {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  background: var(--surfacePrimary);
 }
