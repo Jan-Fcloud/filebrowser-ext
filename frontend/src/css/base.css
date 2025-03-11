@@ -92,6 +92,25 @@ main {
   width: calc(100% - 19em);
 }
 
+.full-width {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.full-width > div > div {
+  max-width: 500px !important;
+  min-width: 250px !important;
+  width: 50% !important;
+  margin: 0 !important;
+}
+
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+}
+
 .breadcrumbs {
   height: 3em;
   background: var(--background);

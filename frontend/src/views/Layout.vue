@@ -3,13 +3,14 @@
     <div v-if="uploadStore.getProgress" class="progress">
       <div v-bind:style="{ width: uploadStore.getProgress + '%' }"></div>
     </div>
-    <sidebar></sidebar>
-    <main>
-      <router-view></router-view>
+    <sidebar v-if="!route.path.startsWith('/share')"></sidebar>
+    <main :class="{ 'full-width': route.path.startsWith('/share') }">
+      <router-view :class="{ 'center-box': route.path.startsWith('/share') }"></router-view>
       <shell
         v-if="
-          enableExec && authStore.isLoggedIn && authStore.user?.perm.execute
+          enableExec && authStore.isLoggedIn && authStore.user?.perm.execute && !route.path.startsWith('/share')
         "
+
       />
     </main>
     <prompts></prompts>

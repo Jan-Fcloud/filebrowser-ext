@@ -42,6 +42,16 @@
                 <i class="material-icons">content_paste_go</i>
               </button>
             </td>
+            <td class="small" v-if="hasDownloadLink()">
+              <button
+                class="action go-to-link"
+                :aria-label="$t('buttons.goToLink')"
+                :title="$t('buttons.goToLink')"
+                @click="openInNewTab(buildLink(link))"
+              >
+                <i class="material-icons">open_in_new</i>
+              </button>
+            </td>
             <td class="small">
               <button
                 class="action"
@@ -278,6 +288,15 @@ export default {
       }
 
       this.listing = !this.listing;
+    },
+    openInNewTab(url) {
+      const newWindow = window.open(url, '_blank');
+      if (newWindow) {
+        newWindow.opener = null; // For security reasons
+      } else {
+        // If window.open returned null, it was likely blocked
+        this.$showError(this.$t('errors.popupBlocked') || 'Popup was blocked. Please allow popups for this site.');
+      }
     },
   },
 };

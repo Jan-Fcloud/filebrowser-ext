@@ -19,14 +19,14 @@
       >
         <i class="material-icons">content_paste</i>
       </button>
-      <action
+      <!-- <action
         icon="check_circle"
         :label="t('buttons.selectMultiple')"
         @action="toggleMultipleSelection"
-      />
+      /> -->
     </header-bar>
 
-    <breadcrumbs :base="'/share/' + hash" />
+    <!-- <breadcrumbs :base="'/share/' + hash" /> -->
 
     <div v-if="layoutStore.loading">
       <h2 class="message delayed" style="padding-top: 3em !important">
@@ -73,6 +73,7 @@
       </div>
       <errors v-else :errorCode="error.status" />
     </div>
+    <!-- SHARE-MAIN-COMPONENT -->
     <div v-else-if="req !== null">
       <div class="share">
         <div
@@ -129,15 +130,15 @@
                 >{{ t("buttons.openFile") }}
               </div>
             </a>
-            <qrcode-vue
+            <!-- <qrcode-vue
               v-if="req.isDir"
               :value="link"
               :size="100"
               level="M"
-            ></qrcode-vue>
+            ></qrcode-vue> -->
           </div>
           <div v-if="!req.isDir" class="share__box__element share__box__center">
-            <qrcode-vue :value="link" :size="200" level="M"></qrcode-vue>
+            <!-- <qrcode-vue :value="link" :size="200" level="M"></qrcode-vue> -->
           </div>
           <div
             v-if="req.isDir"
@@ -293,6 +294,7 @@
         </div>
       </div>
     </div>
+    <!-- SHARE-MAIN-COMPONENT -->
   </div>
 </template>
 
@@ -306,7 +308,7 @@ import HeaderBar from "@/components/header/HeaderBar.vue";
 import Action from "@/components/header/Action.vue";
 import Breadcrumbs from "@/components/Breadcrumbs.vue";
 import Errors from "@/views/Errors.vue";
-import QrcodeVue from "qrcode.vue";
+// import QrcodeVue from "qrcode.vue";
 import Item from "@/components/files/ListingItem.vue";
 import { useFileStore } from "@/stores/file";
 import { useLayoutStore } from "@/stores/layout";

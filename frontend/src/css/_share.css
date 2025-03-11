@@ -11,6 +11,10 @@
   }
 }
 
+.max-width-important {
+  width: 100% !important;
+}
+
 .share__box {
   box-shadow:
     rgba(0, 0, 0, 0.06) 0px 1px 3px,

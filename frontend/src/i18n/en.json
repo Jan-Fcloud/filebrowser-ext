@@ -8,6 +8,8 @@
     "copyFile": "Copy file",
     "copyToClipboard": "Copy to clipboard",
     "copyDownloadLinkToClipboard": "Copy download link to clipboard",
+    "copyLinkToClipboard": "Copy link to clipboard",
+    "goToLink": "Go to link",
     "create": "Create",
     "delete": "Delete",
     "download": "Download",
